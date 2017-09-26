@@ -1,13 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26906.1
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Summer.Core", "Summer.Core\Summer.Core.csproj", "{3E93A057-9E43-41A6-87CA-7B0FE54FF02B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Summer.Core", "Summer.Core\Summer.Core.csproj", "{3E93A057-9E43-41A6-87CA-7B0FE54FF02B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Summer.Aop", "Summer.Aop\Summer.Aop.csproj", "{29416E44-8B2C-4D86-8531-D89941EAB2C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Summer.Aop", "Summer.Aop\Summer.Aop.csproj", "{29416E44-8B2C-4D86-8531-D89941EAB2C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Summer.Core.Fakes", "Summer.Core.Fakes\Summer.Core.Fakes.csproj", "{AEFE0CC0-91D3-4C60-9A63-D15A6EC24711}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Summer.Core.Fakes", "Summer.Core.Fakes\Summer.Core.Fakes.csproj", "{AEFE0CC0-91D3-4C60-9A63-D15A6EC24711}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Summer.XUnitTestProject", "Summer.XUnitTestProject\Summer.XUnitTestProject.csproj", "{9B5032BE-4CF1-4542-AE7E-EEF2303BDF49}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Summer.Core.ConsoleTest", "Summer.Core.ConsoleTest\Summer.Core.ConsoleTest.csproj", "{89E6F554-2C52-4524-B919-3121CF3D20ED}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{735CAAD5-08F7-4480-91A9-AF092EFB049F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +33,18 @@ Global
 		{AEFE0CC0-91D3-4C60-9A63-D15A6EC24711}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AEFE0CC0-91D3-4C60-9A63-D15A6EC24711}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AEFE0CC0-91D3-4C60-9A63-D15A6EC24711}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B5032BE-4CF1-4542-AE7E-EEF2303BDF49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B5032BE-4CF1-4542-AE7E-EEF2303BDF49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B5032BE-4CF1-4542-AE7E-EEF2303BDF49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B5032BE-4CF1-4542-AE7E-EEF2303BDF49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89E6F554-2C52-4524-B919-3121CF3D20ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89E6F554-2C52-4524-B919-3121CF3D20ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89E6F554-2C52-4524-B919-3121CF3D20ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89E6F554-2C52-4524-B919-3121CF3D20ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{735CAAD5-08F7-4480-91A9-AF092EFB049F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{735CAAD5-08F7-4480-91A9-AF092EFB049F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{735CAAD5-08F7-4480-91A9-AF092EFB049F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{735CAAD5-08F7-4480-91A9-AF092EFB049F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

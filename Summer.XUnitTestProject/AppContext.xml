@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<objects xmlns="http://www.springframework.net">
+    <object name="teste" type="Summer.XUnitTestProject.EntityToTest, Summer.XUnitTestProject">
+        <property name="Name" value="Luiz Carlos Faria" />
+    </object>
+
+</objects>

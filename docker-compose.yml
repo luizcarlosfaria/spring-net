@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  summer.core.consoletest:
+    image: summer.core.consoletest
+    build:
+      context: ./Summer.Core.ConsoleTest
+      dockerfile: Dockerfile
