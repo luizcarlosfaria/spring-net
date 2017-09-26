@@ -23,6 +23,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 
 #endregion
 
@@ -39,7 +40,7 @@ namespace Spring.Proxy
         /// Creates the proxy type.
         /// </summary>
         /// <returns>The generated proxy class.</returns>
-        Type BuildProxyType();
+        TypeInfo BuildProxyType();
 
 		/// <summary>
 		/// The name of the proxy <see cref="System.Type"/>.

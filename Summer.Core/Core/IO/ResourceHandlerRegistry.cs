@@ -246,14 +246,14 @@ namespace Spring.Core.IO
 
             lock (syncRoot)
             {
-                SecurityCritical.ExecutePrivileged( new SecurityPermission(SecurityPermissionFlag.Infrastructure), delegate
-                {
+                //SecurityCritical.ExecutePrivileged( new SecurityPermission(SecurityPermissionFlag.Infrastructure), delegate
+                //{
                     // register generic uri parser for this scheme
                     if (!UriParser.IsKnownScheme(protocolName))
                     {
                         UriParser.Register(new TolerantUriParser(), protocolName, 0);
                     }
-                });
+                //});
                 IDynamicConstructor ctor = GetResourceConstructor(handlerType);
                 resourceHandlers[protocolName] = ctor;
             }

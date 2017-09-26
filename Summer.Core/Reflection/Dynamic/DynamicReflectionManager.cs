@@ -28,7 +28,6 @@ using System.Reflection;
 using System.Reflection.Emit;
 using System.Runtime.CompilerServices;
 using System.Security;
-using System.Security.Permissions;
 using Spring.Util;
 
 using NetDynamicMethod = System.Reflection.Emit.DynamicMethod;
@@ -414,7 +413,7 @@ namespace Spring.Reflection.Dynamic
             methodName = "_dynamic_" + member.DeclaringType.FullName + "." + methodName;
             try
             {
-                new PermissionSet(PermissionState.Unrestricted).Demand();
+                //new PermissionSet(PermissionState.Unrestricted).Demand();
                 dmGetter = CreateDynamicMethodInternal(methodName, returnType, argumentTypes, member, skipVisibility);
             }
             catch(SecurityException)

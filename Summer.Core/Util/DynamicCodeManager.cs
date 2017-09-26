@@ -96,18 +96,10 @@ namespace Spring.Util
                     an.Name = assemblyName;
                     
                     AssemblyBuilder assembly;
-#if DEBUG_DYNAMIC
-                    assembly = AppDomain.CurrentDomain.DefineDynamicAssembly(an, AssemblyBuilderAccess.RunAndSave, null, null, null, null,null, true );
-                    module = assembly.DefineDynamicModule(an.Name, an.Name + ".dll", true);
-#else
+
                     an.SetPublicKey(Assembly.GetExecutingAssembly().GetName().GetPublicKey());
-                    assembly = AppDomain.CurrentDomain.DefineDynamicAssembly(an, AssemblyBuilderAccess.Run, null, null, null, null,null, true );
-#if DEBUG                    
-                    module = assembly.DefineDynamicModule(an.Name, true);
-#else
-			        module = assembly.DefineDynamicModule(an.Name, false);
-#endif
-#endif
+                    assembly = AssemblyBuilder.DefineDynamicAssembly(an, AssemblyBuilderAccess.Run);
+                    module = assembly.DefineDynamicModule(an.Name);
                     s_moduleCache[assemblyName] = module;
                 }
                 return module;
@@ -138,7 +130,8 @@ namespace Spring.Util
             }
 
             AssemblyBuilder assembly = (AssemblyBuilder) module.Assembly;
-            assembly.Save(assembly.GetName().Name + ".dll");            
+            throw new NotImplementedException("assembly.Save(assembly.GetName().Name + \".dll\");");
+            //assembly.Save(assembly.GetName().Name + ".dll");
         }
 
         /// <summary>

@@ -798,27 +798,27 @@ namespace Spring.Util
         }
 
 
-        /// <summary>
-        /// Given the <see cref="System.Type"/> return its representation as
-        /// it would appear in the source code files.
-        /// </summary>
-        /// <remarks>
-        /// Largely intended to handle generic types where .ToString() will typically return:
-        /// "System.Collections.Generic.List`1[System.Collections.Generic.Dictionary`2[System.String,System.Int32]]"
-        /// and this method will instead return:
-        /// "System.Collections.Generic.List&lt;System.Collections.Generic.Dictionary&lt;string,int&gt;&gt;"
-        /// </remarks>
-        /// <param name="type">The type.</param>
-        /// <returns>Friendly string representing the Type</returns>
-        public static string GetTypeFriendlyName(Type type)
-        {
-#if MONO
-            //no csharp services in mono (verify this!) so have to fall back to returning the ToString() for now
-            //TODO: investigate whether there is another equivalent manner of providing this functionality under MONO
-            return type.ToString();
-#endif
-            return (new Microsoft.CSharp.CSharpCodeProvider()).GetTypeOutput(new System.CodeDom.CodeTypeReference(type));
-        }
+//        /// <summary>
+//        /// Given the <see cref="System.Type"/> return its representation as
+//        /// it would appear in the source code files.
+//        /// </summary>
+//        /// <remarks>
+//        /// Largely intended to handle generic types where .ToString() will typically return:
+//        /// "System.Collections.Generic.List`1[System.Collections.Generic.Dictionary`2[System.String,System.Int32]]"
+//        /// and this method will instead return:
+//        /// "System.Collections.Generic.List&lt;System.Collections.Generic.Dictionary&lt;string,int&gt;&gt;"
+//        /// </remarks>
+//        /// <param name="type">The type.</param>
+//        /// <returns>Friendly string representing the Type</returns>
+//        public static string GetTypeFriendlyName(Type type)
+//        {
+//#if MONO
+//            //no csharp services in mono (verify this!) so have to fall back to returning the ToString() for now
+//            //TODO: investigate whether there is another equivalent manner of providing this functionality under MONO
+//            return type.ToString();
+//#endif
+//            return (new Microsoft.CSharp.CSharpCodeProvider()).GetTypeOutput(new System.CodeDom.CodeTypeReference(type));
+//        }
 
 
         /// <summary>
@@ -1609,8 +1609,8 @@ namespace Spring.Util
                 }
 
                 FieldInfo[] fields = GetFields(type);
-                SecurityCritical.ExecutePrivileged(new PermissionSet(PermissionState.Unrestricted), delegate
-                {
+                //SecurityCritical.ExecutePrivileged(new PermissionSet(PermissionState.Unrestricted), delegate
+                //{
                     DynamicMethod dm = new DynamicMethod(type.FullName + ".ShallowCopy", null, new Type[] { typeof(object), typeof(object) }, type.Module, true);
                     ILGenerator ilGen = dm.GetILGenerator();
                     ilGen.DeclareLocal(type);
@@ -1632,7 +1632,7 @@ namespace Spring.Util
                     ilGen.Emit(OpCodes.Ret);
 
                     handler = (MemberwiseCopyHandler)dm.CreateDelegate(typeof(MemberwiseCopyHandler));
-                });
+                //});
 
                 s_handlerCache[type] = handler;
             }

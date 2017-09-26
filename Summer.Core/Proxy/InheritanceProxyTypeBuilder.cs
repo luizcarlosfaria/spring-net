@@ -93,7 +93,7 @@ namespace Spring.Proxy
 		/// </p>
 		/// </remarks>
 		/// <returns>The generated proxy class.</returns>
-		public override Type BuildProxyType()
+		public override TypeInfo BuildProxyType()
 		{
 			BaseType = TargetType;
             if (BaseType.IsSealed)
@@ -122,7 +122,7 @@ namespace Spring.Proxy
                 new BaseProxyMethodBuilder(typeBuilder, this, false),
                 BaseType, declaredMembersOnly);
 
-            return typeBuilder.CreateType();
+            return typeBuilder.CreateTypeInfo();
         }
 
         #endregion

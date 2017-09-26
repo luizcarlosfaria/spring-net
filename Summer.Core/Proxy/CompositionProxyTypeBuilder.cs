@@ -98,7 +98,7 @@ namespace Spring.Proxy
         /// If the <see cref="IProxyTypeBuilder.TargetType"/>
         /// does not implement any interfaces.
         /// </exception>
-        public override Type BuildProxyType()
+        public override TypeInfo BuildProxyType()
         {
             if (Interfaces == null || Interfaces.Count == 0)
             {
@@ -127,7 +127,7 @@ namespace Spring.Proxy
 
             ImplementCustom(typeBuilder);
 
-            return typeBuilder.CreateType();
+            return typeBuilder.CreateTypeInfo();
         }
 
         /// <summary>

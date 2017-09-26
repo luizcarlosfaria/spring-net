@@ -20,49 +20,49 @@
 
 #region Imports
 
-using System.Runtime.Remoting;
 using Spring.Objects.Factory.Config;
+using System.Runtime.Remoting;
 
 #endregion
 
 namespace Spring.Context.Support
 {
-	/// <summary>
-	/// <see cref="Spring.Objects.Factory.Config.IObjectPostProcessor"/>
-	/// implementation that passes the application context to object that
-	/// implement the
-	/// <see cref="Spring.Context.IApplicationContextAware"/>,
-	/// <see cref="Spring.Context.IMessageSourceAware"/>, and
-	/// <see cref="Spring.Context.IResourceLoaderAware"/> interfaces. 
-	/// </summary>
-	/// <remarks>
-	/// <p>
-	/// If an object's class implements more than one of the
-	/// <see cref="Spring.Context.IApplicationContextAware"/>,
-	/// <see cref="Spring.Context.IMessageSourceAware"/>, and
-	/// <see cref="Spring.Context.IResourceLoaderAware"/> interfaces, then the
-	/// order in which the interfaces are satisfied is as follows...
-	/// <list type="bullet">
-	/// <item><description>
-	/// <see cref="Spring.Context.IResourceLoaderAware"/>
-	/// </description></item>
-	/// <item><description>
-	/// <see cref="Spring.Context.IMessageSourceAware"/>
-	/// </description></item>
-	/// <item><description>
-	/// <see cref="Spring.Context.IApplicationContextAware"/>
-	/// </description></item>
-	/// </list>
-	/// </p>
-	/// <p>
-	/// Application contexts will automatically register this with their
-	/// underlying object factory. Applications should thus never need to use
-	/// this class directly.
-	/// </p>
-	/// </remarks>
-	/// <author>Juergen Hoeller</author>
-	/// <author>Griffin Caprio (.NET)</author>
-	public class ApplicationContextAwareProcessor : IObjectPostProcessor
+    /// <summary>
+    /// <see cref="Spring.Objects.Factory.Config.IObjectPostProcessor"/>
+    /// implementation that passes the application context to object that
+    /// implement the
+    /// <see cref="Spring.Context.IApplicationContextAware"/>,
+    /// <see cref="Spring.Context.IMessageSourceAware"/>, and
+    /// <see cref="Spring.Context.IResourceLoaderAware"/> interfaces. 
+    /// </summary>
+    /// <remarks>
+    /// <p>
+    /// If an object's class implements more than one of the
+    /// <see cref="Spring.Context.IApplicationContextAware"/>,
+    /// <see cref="Spring.Context.IMessageSourceAware"/>, and
+    /// <see cref="Spring.Context.IResourceLoaderAware"/> interfaces, then the
+    /// order in which the interfaces are satisfied is as follows...
+    /// <list type="bullet">
+    /// <item><description>
+    /// <see cref="Spring.Context.IResourceLoaderAware"/>
+    /// </description></item>
+    /// <item><description>
+    /// <see cref="Spring.Context.IMessageSourceAware"/>
+    /// </description></item>
+    /// <item><description>
+    /// <see cref="Spring.Context.IApplicationContextAware"/>
+    /// </description></item>
+    /// </list>
+    /// </p>
+    /// <p>
+    /// Application contexts will automatically register this with their
+    /// underlying object factory. Applications should thus never need to use
+    /// this class directly.
+    /// </p>
+    /// </remarks>
+    /// <author>Juergen Hoeller</author>
+    /// <author>Griffin Caprio (.NET)</author>
+    public class ApplicationContextAwareProcessor : IObjectPostProcessor
 	{
 		private IApplicationContext _applicationContext;
 

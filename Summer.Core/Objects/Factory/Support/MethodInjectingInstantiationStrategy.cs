@@ -286,14 +286,14 @@ namespace Spring.Objects.Factory.Support
 			/// <returns>
 			/// A <see cref="System.Type"/> suitable for Method-Injection. 
 			/// </returns>
-			public Type BuildType()
+			public TypeInfo BuildType()
 			{
 				TypeBuilder typeBuilder = DefineType();
 				DefineFields(typeBuilder);
 				DefineConstructors(typeBuilder);
 				DefineProperties(typeBuilder);
 				DefineMethods(typeBuilder);
-				return typeBuilder.CreateType();
+				return typeBuilder.CreateTypeInfo();
 			}
 
 			private Type BaseType

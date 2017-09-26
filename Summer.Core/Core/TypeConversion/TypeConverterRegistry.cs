@@ -62,7 +62,7 @@ namespace Spring.Core.TypeConversion
             {
                 converters[typeof(string[])] = new StringArrayConverter();
                 converters[typeof(Type)] = new RuntimeTypeConverter();
-                converters[typeof(Color)] = new RGBColorConverter();
+                //converters[typeof(Color)] = new RGBColorConverter();
                 converters[typeof(Uri)] = new UriConverter();
                 converters[typeof(FileInfo)] = new FileInfoConverter();
                 converters[typeof(Stream)] = new StreamConverter();
@@ -72,7 +72,7 @@ namespace Spring.Core.TypeConversion
                 converters[typeof(TimeSpan)] = new TimeSpanConverter();
                 converters[typeof(ICredentials)] = new CredentialConverter();
                 converters[typeof(NetworkCredential)] = new CredentialConverter();
-                converters[typeof(RegistryKey)] = new RegistryKeyConverter();
+                //converters[typeof(RegistryKey)] = new RegistryKeyConverter();
         
                 // register user-defined type converters
                 ConfigurationUtils.GetSection(TypeConvertersSectionName);

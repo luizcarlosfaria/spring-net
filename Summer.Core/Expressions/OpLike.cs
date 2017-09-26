@@ -20,6 +20,7 @@
 
 using System;
 using System.Runtime.Serialization;
+using System.Text.RegularExpressions;
 #if !MONO_2_0
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
@@ -63,7 +64,16 @@ namespace Spring.Expressions
             string text = GetLeftValue( context, evalContext ) as string;
             string pattern = GetRightValue( context, evalContext ) as string;
 
-            return LikeOperator.LikeString(text, pattern, CompareMethod.Text);
+            pattern = Regex.Escape(pattern).Replace(@"\*", ".*").Replace(@"\?", ".");
+
+            throw new NotImplementedException("LikeOperator.LikeString");
+
+            return new Regex(
+                "^" + Regex.Escape(pattern).Replace(@"\*", ".*").Replace(@"\?", ".") + "$",
+                RegexOptions.IgnoreCase | RegexOptions.Singleline
+            ).IsMatch(text);
+
+            //return LikeOperator.LikeString(text, pattern, CompareMethod.Text);
 #else
             throw new NotSupportedException("'like' operator is only supported in .NET 2.0 or higher.");
 #endif

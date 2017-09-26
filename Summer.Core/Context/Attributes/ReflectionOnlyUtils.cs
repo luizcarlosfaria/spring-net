@@ -23,7 +23,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Security.Permissions;
-using System.Security.Policy;
+//using System.Security.Policy;
 
 namespace Spring.Context.Attributes
 {
@@ -32,35 +32,35 @@ namespace Spring.Context.Attributes
     /// </summary>
     public static class ReflectionOnlyUtils
     {
-        /// <summary>
-        /// Load the <see cref="Assembly"/> into the ReflectionsOnly context based on its partial name.
-        /// </summary>
-        /// <param name="partialName">The partial name.</param>
-        /// <returns>The matching <see cref="Assembly"/></returns>
-        public static Assembly ReflectionOnlyLoadWithPartialName(string partialName)
-        {
-            return ReflectionOnlyLoadWithPartialName(partialName, null);
-        }
+        ///// <summary>
+        ///// Load the <see cref="Assembly"/> into the ReflectionsOnly context based on its partial name.
+        ///// </summary>
+        ///// <param name="partialName">The partial name.</param>
+        ///// <returns>The matching <see cref="Assembly"/></returns>
+        //public static Assembly ReflectionOnlyLoadWithPartialName(string partialName)
+        //{
+        //    return ReflectionOnlyLoadWithPartialName(partialName, null);
+        //}
 
-        private static Assembly ReflectionOnlyLoadWithPartialName(string partialName, Evidence securityEvidence)
-        {
-            if (securityEvidence != null)
-                new SecurityPermission(SecurityPermissionFlag.ControlEvidence).Demand();
+        //private static Assembly ReflectionOnlyLoadWithPartialName(string partialName, Evidence securityEvidence)
+        //{
+        //    if (securityEvidence != null)
+        //        new SecurityPermission(SecurityPermissionFlag.ControlEvidence).Demand();
 
-            AssemblyName fileName = new AssemblyName(partialName);
+        //    AssemblyName fileName = new AssemblyName(partialName);
 
-            var assembly = nLoad(fileName, null, securityEvidence, null, null, false, true);
+        //    var assembly = nLoad(fileName, null, securityEvidence, null, null, false, true);
 
-            if (assembly != null)
-                return assembly;
+        //    if (assembly != null)
+        //        return assembly;
 
-            var assemblyRef = EnumerateCache(fileName);
+        //    var assemblyRef = EnumerateCache(fileName);
 
-            if (assemblyRef != null)
-                return InternalLoad(assemblyRef, securityEvidence, null, true);
+        //    if (assemblyRef != null)
+        //        return InternalLoad(assemblyRef, securityEvidence, null, true);
 
-            return assembly;
-        }
+        //    return assembly;
+        //}
 
         private static Assembly nLoad(params object[] args)
         {

@@ -38,6 +38,11 @@ namespace Spring.Context.Support
 	/// <author>Aleksandar Seovic</author>
     public class DefaultSectionHandler : IConfigurationSectionHandler
     {
+        public DefaultSectionHandler()
+        {
+
+        }
+
         #region Methods
         /// <summary>
         /// Returns the configuration section as an <see cref="System.Xml.XmlElement"/>

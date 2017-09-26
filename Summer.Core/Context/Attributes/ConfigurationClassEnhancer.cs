@@ -152,7 +152,7 @@ namespace Spring.Context.Attributes
                 this.interceptor = interceptor;
             }
 
-            public override Type BuildProxyType()
+            public override TypeInfo BuildProxyType()
             {
                 IDictionary targetMethods = new Hashtable();
 
@@ -173,7 +173,7 @@ namespace Spring.Context.Attributes
                     new ConfigurationClassProxyMethodBuilder(typeBuilder, this, false, targetMethods),
                     BaseType, this.DeclaredMembersOnly);
 
-                Type proxyType = typeBuilder.CreateType();
+                TypeInfo proxyType = typeBuilder.CreateTypeInfo();
 
                 // set target method references
                 foreach (DictionaryEntry entry in targetMethods)

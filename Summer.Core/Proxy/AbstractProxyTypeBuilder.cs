@@ -75,7 +75,7 @@ namespace Spring.Proxy
         /// Creates the proxy type.
         /// </summary>
         /// <returns>The generated proxy class.</returns>
-        public abstract Type BuildProxyType();
+        public abstract TypeInfo BuildProxyType();
 
         /// <summary>
         /// The name of the proxy <see cref="System.Type"/>.
