@@ -5,4 +5,8 @@
     <RootNamespace>Summer</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Summer.Core\Summer.Core.csproj" />
+  </ItemGroup>
+
 </Project>
