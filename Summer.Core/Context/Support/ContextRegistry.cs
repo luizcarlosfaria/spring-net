@@ -245,17 +245,17 @@ namespace Spring.Context.Support
         /// </p>
         /// </remarks>
         /// <returns>The root application context.</returns>
-        public static IApplicationContext GetContext(System.Configuration.Configuration configuration = null)
+        public static IApplicationContext GetContext()
         {
             lock (syncRoot)
             {
-                InitializeContextIfNeeded(configuration);
+                InitializeContextIfNeeded();
                 if (rootContextName == null)
                 {
                     throw new ApplicationContextException(
                         "No context registered. Use the 'RegisterContext' method or the 'spring/context' section from your configuration file.");
                 }
-                return GetContext(rootContextName, configuration);
+                return GetContext(rootContextName);
             }
         }
 
@@ -274,7 +274,7 @@ namespace Spring.Context.Support
         /// <exception cref="System.ArgumentException">
         /// If the context name is null or empty
         /// </exception>
-        public static IApplicationContext GetContext(string name, System.Configuration.Configuration configuration = null)
+        public static IApplicationContext GetContext(string name)
         {
             if (StringUtils.IsNullOrEmpty(name))
             {
@@ -285,7 +285,7 @@ namespace Spring.Context.Support
             {
                 lock (syncRoot)
                 {
-                    InitializeContextIfNeeded(configuration);
+                    InitializeContextIfNeeded();
                     IApplicationContext ctx;
                     if (!instance.contextMap.TryGetValue(name, out ctx))
                     {
@@ -373,7 +373,7 @@ namespace Spring.Context.Support
 
         private static bool rootContextCurrentlyInCreation;
 
-        private static void InitializeContextIfNeeded(System.Configuration.Configuration configuration)
+        private static void InitializeContextIfNeeded()
         {
             if (rootContextName == null)
             {
@@ -385,7 +385,7 @@ namespace Spring.Context.Support
                 rootContextCurrentlyInCreation = true;
                 try
                 {
-                    object data = ConfigurationUtils.GetSection(AbstractApplicationContext.ContextSectionName, configuration);
+                    ConfigurationUtils.GetSection(AbstractApplicationContext.ContextSectionName);
                 }
                 finally
                 {

@@ -57,21 +57,11 @@ namespace Spring.Util
         /// </remarks>
         /// <param name="sectionName">Name of the configuration section.</param>
         /// <returns>Object created by a corresponding <see cref="IConfigurationSectionHandler"/>.</returns>
-        public static object GetSection(string sectionName, System.Configuration.Configuration configuration = null)
-        {
-            object resultValue = null;
-            if (configuration != null)
+        public static object GetSection(string sectionName)
             {
                 try
                 {
-                    ConfigurationSection configurationSection = configuration.GetSection(sectionName.TrimEnd('/'));
-                    if (configurationSection != null)
-                    {
-                        IConfigurationSectionHandler instance = (IConfigurationSectionHandler)Activator.CreateInstance(Type.GetType(configurationSection.SectionInformation.Type));
-                        //instance.Create(null, configurationSection, configurationSection.)
-                    }
-
-                    resultValue = configurationSection;
+                return ConfigurationManager.GetSection(sectionName.TrimEnd('/'));
                 }
                 catch (ConfigurationException)
                 {
@@ -81,25 +71,6 @@ namespace Spring.Util
                 {
                     throw CreateConfigurationException(string.Format("Error reading section {0}", sectionName), ex);
                 }
-            }
-            else
-            {
-                try
-                {
-                    resultValue = ConfigurationManager.GetSection(sectionName.TrimEnd('/'));
-                }
-                catch (ConfigurationException)
-                {
-                    throw;
-                }
-                catch (Exception ex)
-                {
-                    throw CreateConfigurationException(string.Format("Error reading section {0}", sectionName), ex);
-                }
-            }
-
-            
-            return resultValue;
         }
 
         /// <summary>

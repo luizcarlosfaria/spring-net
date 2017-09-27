@@ -20,8 +20,8 @@
 
 #region Imports
 
-using Spring.Objects.Factory.Config;
 using System.Runtime.Remoting;
+using Spring.Objects.Factory.Config;
 
 #endregion
 

@@ -174,18 +174,13 @@ namespace Spring.Context.Support
 	public class ContextHandler : IConfigurationSectionHandler
 	{
 		private readonly ILog Log = LogManager.GetLogger(typeof(ContextHandler));
-
-        public ContextHandler()
-        { 
-        
-        }
-
-        /// <summary>
-        /// The <see cref="System.Type"/> of <see cref="Spring.Context.IApplicationContext"/>
-        /// created if no <c>type</c> attribute is specified on a <c>context</c> element.
-        /// </summary>
-        /// <seealso cref="GetContextType"/>
-        protected virtual Type DefaultApplicationContextType
+		
+		/// <summary>
+		/// The <see cref="System.Type"/> of <see cref="Spring.Context.IApplicationContext"/>
+		/// created if no <c>type</c> attribute is specified on a <c>context</c> element.
+		/// </summary>
+		/// <seealso cref="GetContextType"/>
+		protected virtual Type DefaultApplicationContextType
 		{
 			get { return typeof (XmlApplicationContext); }
 		}
