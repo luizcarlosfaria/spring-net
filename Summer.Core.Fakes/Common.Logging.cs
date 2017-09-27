@@ -12,6 +12,8 @@ namespace Common.Logging
         public bool IsInfoEnabled => true;
         public bool IsErrorEnabled => true;
 
+        public bool IsFatalEnabled => true;
+
         public void Debug(Action<Action<object, object, object>> p, Exception exception = null) => Console.WriteLine("Log");
         public void Debug(Action<Action<object, object>> p, Exception exception = null) => Console.WriteLine("Log");
         public void Debug(Action<Action<object>> p, Exception exception = null) => Console.WriteLine("Log");
@@ -45,6 +47,8 @@ namespace Common.Logging
         public void Info(string p, Exception exception = null) => Console.WriteLine("Log");
 
         public void ErrorFormat(string v, params object[] paramameters) => Console.WriteLine("Log");
+
+        public void DebugFormat(string format, params object[] paramameters) => Console.WriteLine("Log");
     }
 
     public static class LogManager
@@ -75,6 +79,19 @@ namespace Common.Logging
         protected ConfigurationException(
           System.Runtime.Serialization.SerializationInfo info,
           System.Runtime.Serialization.StreamingContext context) : base(info, context) { }
+    }
+
+    public enum LogLevel
+    {
+        All,
+        Off,
+        Trace,
+        Debug,
+        Error,
+        Fatal,
+        Info,
+        Warn
+
     }
 
 }
