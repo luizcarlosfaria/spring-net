@@ -15,3 +15,8 @@ For example look that:
 
 ## Factory / DI / AOP Example
 ![spring net-on-dotnetstandard2-aop](http://res.cloudinary.com/luizcarlosfaria/image/upload/v1506499371/SPRING.NET/spring.net-on-dotnetstandard2-aop_lif2uw.png)
+
+
+## See more about on Spring.NET project
+
+https://github.com/spring-projects/spring-net/issues/133
