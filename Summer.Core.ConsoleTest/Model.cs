@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Summer.Core.ConsoleTest
 {
-    public class Person
+    public class Person : IPerson
     {
         public string Name { get; set; }
 
@@ -13,6 +13,16 @@ namespace Summer.Core.ConsoleTest
         public DateTime Birthday { get; set; }
 
         public IList<Contact> Contacts { get; set; }
+
+        public void Talk()
+        {
+            Console.WriteLine("Hello");
+        }
+    }
+
+    public interface IPerson
+    {
+        void Talk();
     }
 
     public class Contact

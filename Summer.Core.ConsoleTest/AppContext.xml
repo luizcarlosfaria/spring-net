@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 
-<objects xmlns="http://www.springframework.net">
+<objects xmlns="http://www.springframework.net" xmlns:aop="http://www.springframework.net/aop">
 
     <object name="blablabla" type="Summer.Core.ConsoleTest.Person, Summer.Core.ConsoleTest">
         <property name="Name" value="Luiz Carlos Faria" />
@@ -27,5 +27,23 @@
             </list>
         </property>
     </object>
+
+    <object id="AllServiceOperations" type="Spring.Aop.Support.SdkRegularExpressionMethodPointcut, Spring.Aop">
+        <property name="Patterns">
+            <list>
+                <value>Summer.Core.ConsoleTest.*on</value>
+            </list>
+        </property>
+    </object>
+
+    <object id="AroundAdviceExample"
+        type="Summer.Core.ConsoleTest.AroundAdviceExample, Summer.Core.ConsoleTest">
+    </object>
+
+    <aop:config>
+        <aop:advisor
+                advice-ref="AroundAdviceExample"
+                                    pointcut-ref="AllServiceOperations" />
+    </aop:config>
 
 </objects>

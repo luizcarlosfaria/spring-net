@@ -9,7 +9,8 @@ namespace Summer.Core.ConsoleTest
         static void Main(string[] args)
         {
             var context = new XmlApplicationContext(@".\AppContext.xml");
-            var person = context.GetObject<Person>("blablabla");
+            var person = context.GetObject<IPerson>("blablabla");
+            person.Talk();
 
             Console.WriteLine($"OSVersion: {System.Environment.OSVersion}");
             Console.WriteLine($"MachineName: {System.Environment.MachineName}");
