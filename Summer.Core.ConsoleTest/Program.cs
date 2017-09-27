@@ -9,16 +9,11 @@ namespace Summer.Core.ConsoleTest
         static void Main(string[] args)
         {
             var context = new XmlApplicationContext(@".\AppContext.xml");
-            var element = context.GetObject<EntityToTest>("teste");
-            if (element.Name == "Luiz Carlos Faria")
-                Console.WriteLine("Sucesso! ");
-            else
-                Console.WriteLine("Falha!");
+            var person = context.GetObject<Person>("blablabla");
 
             Console.WriteLine($"OSVersion: {System.Environment.OSVersion}");
-            Console.WriteLine($"Platform: {System.Environment.OSVersion.Platform}");
-            Console.WriteLine($"Version: {System.Environment.OSVersion.VersionString}");
-
+            Console.WriteLine($"MachineName: {System.Environment.MachineName}");
+            Console.WriteLine($"Path: {System.Environment.CurrentDirectory}");
         }
     }
 }

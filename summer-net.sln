@@ -15,6 +15,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Summer.Core.ConsoleTest", "
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{735CAAD5-08F7-4480-91A9-AF092EFB049F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{95BD85CA-B3E5-4A72-B4AC-178BAC7B0FDE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{0D9A7FCD-948C-4A90-9AB8-153092BB9114}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,6 +52,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9B5032BE-4CF1-4542-AE7E-EEF2303BDF49} = {95BD85CA-B3E5-4A72-B4AC-178BAC7B0FDE}
+		{89E6F554-2C52-4524-B919-3121CF3D20ED} = {0D9A7FCD-948C-4A90-9AB8-153092BB9114}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DEF2D9F0-F6BC-4C5E-9EC7-01845D607FB7}
