@@ -13,7 +13,7 @@ namespace Summer.XUnitTestProject
             Assert.NotNull(config.GetSection("spring/context"));
             Assert.NotNull(config.GetSection("spring/objects"));
 
-            Spring.Context.Support.ContextRegistry.GetContext(config);
+            Spring.Context.Support.ContextRegistry.GetContext();
         }
     }
 }
