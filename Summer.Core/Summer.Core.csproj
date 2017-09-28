@@ -35,6 +35,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="__fakes\System.Web.Configuration.cs" />
+    <None Include="__fakes\System.Web.UI.WebControls.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.CSharp" Version="4.4.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="2.0.0" />
@@ -54,10 +59,6 @@
     <PackageReference Include="System.Reflection.Emit.Lightweight" Version="4.3.0" />
     <PackageReference Include="System.Reflection.Extensions" Version="4.3.0" />
     <PackageReference Include="System.Reflection.TypeExtensions" Version="4.4.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Summer.Core.Fakes\Summer.Core.Fakes.csproj" />
   </ItemGroup>
 
 </Project>

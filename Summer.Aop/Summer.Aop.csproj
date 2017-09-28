@@ -17,7 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Summer.Core.Fakes\Summer.Core.Fakes.csproj" />
     <ProjectReference Include="..\Summer.Core\Summer.Core.csproj" />
   </ItemGroup>
 

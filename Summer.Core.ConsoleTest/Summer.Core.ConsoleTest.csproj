@@ -7,7 +7,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Summer.Aop\Summer.Aop.csproj" />
-    <ProjectReference Include="..\Summer.Core.Fakes\Summer.Core.Fakes.csproj" />
     <ProjectReference Include="..\Summer.Core\Summer.Core.csproj" />
   </ItemGroup>
 
