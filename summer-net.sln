@@ -23,6 +23,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{0D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Summer.Core.Tests", "Summer.Core.Tests\Summer.Core.Tests.csproj", "{4AEAC1D6-2249-4727-8C8E-17DF6424685A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Summer", "Summer", "{C441446A-A324-4C26-A350-21F3F1541F36}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,6 +56,8 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{3E93A057-9E43-41A6-87CA-7B0FE54FF02B} = {C441446A-A324-4C26-A350-21F3F1541F36}
+		{29416E44-8B2C-4D86-8531-D89941EAB2C7} = {C441446A-A324-4C26-A350-21F3F1541F36}
 		{89E6F554-2C52-4524-B919-3121CF3D20ED} = {0D9A7FCD-948C-4A90-9AB8-153092BB9114}
 		{4AEAC1D6-2249-4727-8C8E-17DF6424685A} = {95BD85CA-B3E5-4A72-B4AC-178BAC7B0FDE}
 	EndGlobalSection
