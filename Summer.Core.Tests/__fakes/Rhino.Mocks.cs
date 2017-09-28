@@ -2,6 +2,10 @@
 using System.Linq.Expressions;
 using Spring.Context;
 using Spring.Globalization;
+using NSubstitute;
+using NSubstitute.Core;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Rhino.Mocks
 {
@@ -11,7 +15,7 @@ namespace Rhino.Mocks
     {
         public object PartialMock(Type type, IFormatter formatter = null)
         {
-            return Activator.CreateInstance(type);
+            return Substitute.For(new Type[] { type }, null);
         }
 
         public void ReplayAll()
@@ -39,9 +43,8 @@ namespace Rhino.Mocks
 
     public static class Expect
     {
-        public static CallReturn<T> Call<T>(T data) => new CallReturn<T>();
-        public static CallReturn<T> Call<T>(Expression<Func<T>> data) => new CallReturn<T>();
-        public static CallReturn<object> Call(Action data) => new CallReturn<object>();
+        public static CallReturn<Action> Call(Action actionToExecute) => new CallReturn<Action>();
+        public static CallReturn<T> Call<T>(T ignored) => new CallReturn<T>();
     }
 
     public class LastCall
