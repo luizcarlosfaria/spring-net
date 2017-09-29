@@ -166,7 +166,7 @@ namespace Spring.Context.Support
         [Test]
         public void FactoryObjectsAreNotInstantiatedBeforeObjectFactoryPostProcessorsAreApplied()
         {
-            XmlApplicationContext ctx = new XmlApplicationContext("Spring/Context/Support/SPRNET-192.xml");
+            XmlApplicationContext ctx = new XmlApplicationContext("Data/Spring/Context/Support/SPRNET-192.xml");
             LogFactoryObject logFactory = (LogFactoryObject) ctx["&log"];
             Assert.AreEqual("foo", logFactory.LogName);
         }

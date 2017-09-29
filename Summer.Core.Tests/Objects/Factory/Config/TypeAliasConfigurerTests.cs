@@ -105,7 +105,7 @@ namespace Spring.Objects.Factory.Config
         [Test]
         public void WithinApplicationContext()
         {
-            IApplicationContext ctx = new XmlApplicationContext("file://Spring/Objects/Factory/Config/typeAliases.xml");
+            IApplicationContext ctx = new XmlApplicationContext("file://Data/Spring/Objects/Factory/Config/typeAliases.xml");
 
             object obj1 = ctx.GetObject("testObject1");
             Assert.IsNotNull(obj1);

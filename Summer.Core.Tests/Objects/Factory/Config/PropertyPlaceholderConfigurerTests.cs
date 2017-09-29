@@ -502,7 +502,7 @@ namespace Spring.Objects.Factory.Config
 		public void WithAppConfigResolution()
 		{
 			IApplicationContext ctx = new XmlApplicationContext(
-				"file://Spring/Objects/Factory/Config/PropertyPlaceholderConfigurerTests.xml");
+				"file://Data/Spring/Objects/Factory/Config/PropertyPlaceholderConfigurerTests.xml");
 			TestObjectDAO to = (TestObjectDAO) ctx["testObjectDao"];
 			Assert.AreEqual(testConnectionString, to.DbConnection.ConnectionString);
 			Assert.AreEqual(1000, to.MaxResults);
@@ -517,7 +517,7 @@ namespace Spring.Objects.Factory.Config
 		public void WithTwoLocations()
 		{
 			IApplicationContext ctx = new XmlApplicationContext(
-				"file://Spring/Objects/Factory/Config/PPCTwoLocationsTwoSectionsTests.xml");
+                "file://Data/Spring/Objects/Factory/Config/PPCTwoLocationsTwoSectionsTests.xml");
 			TestObjectDAO to = (TestObjectDAO) ctx["testObjectDao"];
             Assert.AreEqual(testConnectionStringTwo, to.DbConnection.ConnectionString);
 			Assert.AreEqual(1000, to.MaxResults);
@@ -532,7 +532,7 @@ namespace Spring.Objects.Factory.Config
 		public void WithTwoLocationsOneSection()
 		{
 			IApplicationContext ctx = new XmlApplicationContext(
-				"file://Spring/Objects/Factory/Config/PPCTwoLocationsOneSectionTests.xml");
+                "file://Data/Spring/Objects/Factory/Config/PPCTwoLocationsOneSectionTests.xml");
 			TestObjectDAO to = (TestObjectDAO) ctx["testObjectDao"];
             Assert.AreEqual(testConnectionString, to.DbConnection.ConnectionString);
 			Assert.AreEqual(1000, to.MaxResults);
@@ -545,7 +545,7 @@ namespace Spring.Objects.Factory.Config
 		[Test(Description="SPRNET-55")]
 		public void WithAppend()
 		{
-			string resourceName = "Spring/Objects/Factory/Config/PPC-SPRNET-55.xml";
+			string resourceName = "Data/Spring/Objects/Factory/Config/PPC-SPRNET-55.xml";
 			XmlObjectFactory ctx = new XmlObjectFactory(new FileSystemResource(resourceName));
 			Assert.IsNotNull(ctx);
 			IObjectFactoryPostProcessor processor = (IObjectFactoryPostProcessor) ctx["appendConfigurer"];
@@ -617,7 +617,7 @@ namespace Spring.Objects.Factory.Config
         public void WithTypes()
         {
             IApplicationContext ctx = new XmlApplicationContext(
-                "file://Spring/Objects/Factory/Config/PPCWithTypesTests.xml");
+                "file://Data/Spring/Objects/Factory/Config/PPCWithTypesTests.xml");
             
             object obj = ctx["testObject"];
             Assert.IsTrue(obj is TestObject);
@@ -637,8 +637,8 @@ namespace Spring.Objects.Factory.Config
                 new XmlApplicationContext(
                     new[]
                         {
-                            "file://Spring/Objects/Factory/Config/FirstPropertyPlaceholderConfigurer.xml",
-                            "file://Spring/Objects/Factory/Config/SecondPropertyPlaceholderConfigurer.xml"
+                            "file://Data/Spring/Objects/Factory/Config/FirstPropertyPlaceholderConfigurer.xml",
+                            "file://Data/Spring/Objects/Factory/Config/SecondPropertyPlaceholderConfigurer.xml"
                         });
 
             var testObject = context.GetObject<TestObject>("testObject");

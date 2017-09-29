@@ -25,9 +25,12 @@ namespace Rhino.Mocks
         public void VerifyAll()
         {
         }
-        
 
-        public T StrictMock<T>() => default(T);
+
+        public T StrictMock<T>() where T : class
+        {
+            return Substitute.For<T>();
+        }
 
         public IMessageSource DynamicMock(Type type) => null;
 
@@ -43,8 +46,12 @@ namespace Rhino.Mocks
 
     public static class Expect
     {
-        public static CallReturn<Action> Call(Action actionToExecute) => new CallReturn<Action>();
-        public static CallReturn<T> Call<T>(T ignored) => new CallReturn<T>();
+        public static CallReturn<object> Call(object data) => new CallReturn<object>();
+        public static CallReturn<object> Call(Action data)
+        {
+            data();
+            return new CallReturn<object>();
+        }
     }
 
     public class LastCall
@@ -56,7 +63,12 @@ namespace Rhino.Mocks
 
     public class CallReturn<T>
     {
-        public CallReturn<T> Return(T data) => this;
+        public CallReturn<T> Return(T data)
+        {
+            (new object()).Returns(data);
+            return this;
+        }
+
         public CallReturn<T> IgnoreArguments() => this;
         public CallReturn<T> Any() => this;
         public CallReturn<T> Once() => this;

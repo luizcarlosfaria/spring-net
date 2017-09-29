@@ -28,7 +28,7 @@ using Spring.Core.IO;
 
 #endregion
 
-namespace Spring.Objects.Factory.Xml 
+namespace Spring.Objects.Factory.Xml
 {
     /// <summary>
     /// Centralised resource getter for loading all of those XML object
@@ -36,10 +36,10 @@ namespace Spring.Objects.Factory.Xml
     /// </summary>
     /// <author>Rick Evans (.NET)</author>
     /// <author>Erich Eichinger (.NET)</author>
-    public class ReadOnlyXmlTestResource : IResource 
+    public class ReadOnlyXmlTestResource : IResource
     {
         private readonly IResource underlyingResource;
-        private const string TestDataFolder = ".";
+        //private const string TestDataFolder = ".\\data";
 
         /// <summary>
         /// Creates a new instance of the
@@ -49,7 +49,7 @@ namespace Spring.Objects.Factory.Xml
         /// The filename/resourcename (e.g. foo.txt) of the XML file containing the object
         /// definitions.
         /// </param>
-        public ReadOnlyXmlTestResource (string fileName)
+        public ReadOnlyXmlTestResource(string fileName)
         {
             if (ConfigurableResourceLoader.HasProtocol(fileName))
             {
@@ -70,8 +70,8 @@ namespace Spring.Objects.Factory.Xml
         /// <param name="associatedTestType">
         /// The <see cref="System.Type"/> of the test class utilising said file.
         /// </param>
-        public ReadOnlyXmlTestResource (string fileName, Type associatedTestType)
-            : this (ReadOnlyXmlTestResource.GetFilePath (fileName, associatedTestType))
+        public ReadOnlyXmlTestResource(string fileName, Type associatedTestType)
+            : this(ReadOnlyXmlTestResource.GetFilePath(fileName, associatedTestType))
         {
         }
 
@@ -110,30 +110,29 @@ namespace Spring.Objects.Factory.Xml
             get { return this.underlyingResource.InputStream; }
         }
 
-        public static string GetFilePath (string fileName, Type associatedTestType) 
+        public static string GetFilePath(string fileName, Type associatedTestType)
         {
-            if (associatedTestType == null) 
+            if (associatedTestType == null)
             {
                 return fileName;
             }
-
-            // check filesystem
-            StringBuilder path = new StringBuilder (TestDataFolder).Append (Path.DirectorySeparatorChar.ToString());
-            path.Append (associatedTestType.Namespace.Replace (".", Path.DirectorySeparatorChar.ToString()));
-            path.Append (Path.DirectorySeparatorChar.ToString()).Append (fileName);
-
-            FileInfo file = new FileInfo(path.ToString());
-            if (file.Exists)
+            string[] dataFolders = { ".\\data", "." };
+            StringBuilder path = null;
+            foreach (var testDataFolder in dataFolders)
             {
-                return path.ToString ();
+                // check filesystem
+                path = new StringBuilder(testDataFolder).Append(Path.DirectorySeparatorChar.ToString());
+                path.Append(associatedTestType.Namespace.Replace(".", Path.DirectorySeparatorChar.ToString()));
+                path.Append(Path.DirectorySeparatorChar.ToString()).Append(fileName);
+                FileInfo file = new FileInfo(path.ToString());
+                if (file.Exists)
+                {
+                    return path.ToString();
+                }
             }
-            else
-            {
-                // interpret as assembly resource
-                fileName = "assembly://" + associatedTestType.Assembly.FullName + "/" + associatedTestType.Namespace
-                           + "/" + fileName;
-                return fileName;
-            }
+            // interpret as assembly resource
+            fileName = $"assembly://{associatedTestType.Assembly.FullName}/{associatedTestType.Namespace}/{fileName}";
+            return fileName;
         }
 
         public override string ToString()
