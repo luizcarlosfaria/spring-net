@@ -4,6 +4,15 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Spring.Core</AssemblyName>
     <RootNamespace>Spring</RootNamespace>
+    <Authors>LuizCarlosFaria</Authors>
+    <Company>oragon.io</Company>
+    <Product>Oragon</Product>
+    <Description>Spring.Core port to .NET Standard 2.0</Description>
+    <PackageId>Summer.Core</PackageId>
+    <PackageProjectUrl>https://github.com/luizcarlosfaria/Oragon.Architecture</PackageProjectUrl>
+    <PackageIconUrl>http://luizcarlosfaria.net/wp-content/uploads/2014/03/Oragon-Architecture-Penknife.export.png</PackageIconUrl>
+    <RepositoryUrl>https://github.com/luizcarlosfaria/Oragon.Architecture</RepositoryUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
@@ -35,7 +44,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.CSharp" Version="4.4.0" />
+    <PackageReference Include="Common.Logging" Version="3.4.1" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.4.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="2.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="2.0.0" />
@@ -45,10 +55,13 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="2.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Xml" Version="2.0.0" />
-    <PackageReference Include="Microsoft.Net.Compilers" Version="2.3.2" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Configuration" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Net.Compilers" Version="2.6.1" />
     <PackageReference Include="Microsoft.VisualBasic" Version="10.2.0" />
-    <PackageReference Include="System.CodeDom" Version="4.4.0" />
-    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.4.0" />
+    <PackageReference Include="System.CodeDom" Version="4.5.0-preview1-25914-04" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0-preview1-25914-04" />
     <PackageReference Include="System.Reflection" Version="4.3.0" />
     <PackageReference Include="System.Reflection.Emit" Version="4.3.0" />
     <PackageReference Include="System.Reflection.Emit.Lightweight" Version="4.3.0" />

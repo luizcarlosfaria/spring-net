@@ -9,6 +9,8 @@
 
 #endregion
 
+using System;
+
 namespace AopAlliance.Intercept
 {
 	/// <summary>
@@ -44,6 +46,6 @@ namespace AopAlliance.Intercept
         /// If any of the interceptors in the chain or the target object itself
         /// throws an exception.
         /// </exception>
-        object Invoke(IMethodInvocation invocation);
-	}
+        object Invoke(IMethodInvocation invocation);        
+    }
 }

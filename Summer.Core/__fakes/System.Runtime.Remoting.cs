@@ -6,6 +6,31 @@ using System.Threading;
 
 namespace System.Runtime.Remoting
 {
+
+
+    [Serializable]
+    public class RemotingTimeoutException : Exception
+    {
+        public RemotingTimeoutException() { }
+        public RemotingTimeoutException(string message) : base(message) { }
+        public RemotingTimeoutException(string message, Exception inner) : base(message, inner) { }
+        protected RemotingTimeoutException(
+          Serialization.SerializationInfo info,
+          Serialization.StreamingContext context) : base(info, context) { }
+    }
+
+
+    [Serializable]
+    public class RemotingException : Exception
+    {
+        public RemotingException() { }
+        public RemotingException(string message) : base(message) { }
+        public RemotingException(string message, Exception inner) : base(message, inner) { }
+        protected RemotingException(
+          Serialization.SerializationInfo info,
+          Serialization.StreamingContext context) : base(info, context) { }
+    }
+
     public class RemotingServices
     {
         public static bool IsTransparentProxy(object newValue) => false;
