@@ -13,6 +13,7 @@
     <PackageIconUrl>http://luizcarlosfaria.net/wp-content/uploads/2014/03/Oragon-Architecture-Penknife.export.png</PackageIconUrl>
     <RepositoryUrl>https://github.com/luizcarlosfaria/Oragon.Architecture</RepositoryUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
