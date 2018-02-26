@@ -16,7 +16,7 @@ Understanding what's necessary to develop a framework in 2018, change all kind o
 
 This choice does not sounds good for 2018. Squeeze the Spring.NET responsabilities may improve community adoption, just causing needs that community will respond with new framework extensions. Challenges about best extension for .NET Core configuration model, MVC, and others skill must be done.
 
-In regards of that, this port/fork contains only two projects:
+In order of that, this port/fork contains only two projects:
 
 ### Spring.Core
 * A full featured Inversion of Control container
@@ -26,7 +26,7 @@ In regards of that, this port/fork contains only two projects:
 * An Aspect Oriented Programming framework
 
 ### Merging both
-I really consider move Spring.AOP to Spring.Core, aggregating both in only one project/assembly/package. Does not sounds good stay segregated both. AOP is a core concept on my opinion.
+I really considering moving Spring.AOP to Spring.Core, aggregating both in only one project/assembly/nuget package.  The segregation of both projects does not sounds good for me. 
 
 
 # Issues
