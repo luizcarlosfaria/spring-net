@@ -59,3 +59,11 @@ https://github.com/spring-projects/spring-net/issues/144
 
 
 :warning: **It's a proposal, only Spring.Core and Spring.Aop projects was ported to .NET Standard. Other projects does not will be ported on this fork.** :warning:
+
+
+
+
+© [Luiz Carlos Faria](http://gago.io/) ![made in brazil][brazil]
+
+
+[brazil]:http://www.goal.cc/content/images/flags/28.png
