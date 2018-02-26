@@ -1,9 +1,6 @@
 # Summer.Net
 A .NetStandard 2.0 port test of Spring.Net
 
-
-:warning: **It's not a :point_right: PRODUCTION READY :point_left: project, it's for study purpose ONLY.** :warning:
-
 For example look that:
 - [Summer.Core.Fakes/Common.Logging.cs](https://github.com/luizcarlosfaria/summer-net/blob/netstandard--2-0/Summer.Core/__fakes/Common.Logging.cs)
 - [Summer.Core.Fakes/System.Runtime.Remoting.cs](https://github.com/luizcarlosfaria/summer-net/blob/netstandard--2-0/Summer.Core/__fakes/System.Runtime.Remoting.cs)
@@ -20,3 +17,6 @@ For example look that:
 ## See more about on Spring.NET project
 
 https://github.com/spring-projects/spring-net/issues/133
+
+
+:warning: **It's a proposal, only Spring.Core and Spring.Aop projects was ported to .NET Standard. Other projects does not will be ported on this fork.** :warning:
