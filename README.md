@@ -31,9 +31,9 @@ I really considering moving Spring.AOP to Spring.Core, aggregating both in only 
 
 # Issues
 
-This project was created to show for Spring.NET developers that is possible. It's sounds like: 
+This project was created to present for Spring.NET developers that is possible to migrate. It's sounds like: 
 
-_"Hey there, why nobody start a port? We can do that! It's not simple, but it's does not need expend much time, come on, don't give up!"_
+_"Hey there, why nobody starts a port? We can do that! It's not simple, but you don't to spend many time, come on, don't give up!"_
 
 ## Still incubating
 
