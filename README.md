@@ -8,10 +8,10 @@ It's a pleasure contribute with this discussion.
 
 
 ## Goals
-A main goal with this port is solve questions about adapt and overcome migration between .NET Framework to  to .NET Standard. Only core projects of Spring.NET will stay here. 
+A main goal with this port is solve questions about adapt and overcome migration between .NET Framework  to .NET Standard. Only core projects of Spring.NET will stay here. 
 
 
-Understanding what is necessary to develop a framework in 2018 change all kind of decisions took in the past. Spring.NET is a largest project that i know, with more and more responsabilities in only one repository, distributed fracted on some assemblies.
+Understanding what's necessary to develop a framework in 2018 change all kind of decisions took in the past. Spring.NET is a largest project that i know, with more and more responsabilities in only one repository, distributed fracted on some assemblies.
 
 
 This choice does not sounds good for 2018. Squeeze the Spring.NET responsabilities may improve community adoption, just causing needs that community will respond with new framework extensiosn. Challenges about best extension for .NET Core configuration model, MVC, and others skill must be done.
