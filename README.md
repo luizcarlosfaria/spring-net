@@ -3,20 +3,20 @@ A .NetStandard 2.0 port of Spring.Net
 
 ### This port extends [Spring.NET  2.0](https://github.com/spring-projects/spring-net) adding support to .NET Standard
 
-I'm Luiz Carlos Faria, Spring.NET user. I love this project. I couldn't just and watch the project die, Spring.NET solve many questions and adress many ways to do IoC and Dependency Injection the right way.
-It's a pleasure contribute with this discussion.
+I'm Luiz Carlos Faria, Spring.NET user. I love this project. I couldn't just and watch the project die, Spring.NET solves many questions and adress many ways to do IoC and Dependency Injection in the right way.
+It's a pleasure to contribute with this discussion.
 
 
 ## Goals
-A main goal with this port is solve questions about adapt and overcome migration between .NET Framework  to .NET Standard. Only core projects of Spring.NET will stay here. 
+A main goal with this port is solve questions about adapt and overcome migration from .NET Framework to .NET Standard. Only core projects of Spring.NET will stay here. 
 
 
-Understanding what's necessary to develop a framework in 2018 change all kind of decisions took in the past. Spring.NET is a largest project that i know, with more and more responsabilities in only one repository, distributed fracted on some assemblies.
+Understanding what's necessary to develop a framework in 2018, change all kind of decisions taken in the past. Spring.NET is largest project that i know, with more and more responsabilities in only one repository, distributed on some assemblies.
 
 
-This choice does not sounds good for 2018. Squeeze the Spring.NET responsabilities may improve community adoption, just causing needs that community will respond with new framework extensiosn. Challenges about best extension for .NET Core configuration model, MVC, and others skill must be done.
+This choice does not sounds good for 2018. Squeeze the Spring.NET responsabilities may improve community adoption, just causing needs that community will respond with new framework extensions. Challenges about best extension for .NET Core configuration model, MVC, and others skill must be done.
 
-In regard of that, this port/fork contains only two projects:
+In regards of that, this port/fork contains only two projects:
 
 ### Spring.Core
 * A full featured Inversion of Control container
