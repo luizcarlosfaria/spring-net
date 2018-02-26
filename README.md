@@ -29,7 +29,7 @@ In regard of that, this port/fork contains only two projects:
 I really consider move Spring.AOP to Spring.Core, aggregating both in only one project/assembly/package. Does not sounds good stay segregated both. AOP is a core concept on my opinion.
 
 
-#Issues
+# Issues
 
 This project was created to show for Spring.NET developers that is possible. It's sounds like: 
 
