@@ -1,7 +1,7 @@
 # Summer.Net
 A .NetStandard 2.0 port of Spring.Net
 
-### This ports extends [Spring.NET  2.0](https://github.com/spring-projects/spring-net) adding support to .NET Standard
+### This port extends [Spring.NET  2.0](https://github.com/spring-projects/spring-net) adding support to .NET Standard
 
 I'm Luiz Carlos Faria, Spring.NET user. I love this project. I couldn't just and watch the project die, Spring.NET solve many questions and adress many ways to do IoC and Dependency Injection the right way.
 It's a pleasure contribute with this discussion.
